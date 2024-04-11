@@ -1,5 +1,3 @@
-package org.launchcode;
-
 import java.util.ArrayList;
 
 public class Course {
@@ -7,6 +5,7 @@ public class Course {
     private Teacher instructor;
     private ArrayList<Student> enrolledStudents;
 
+    // Constructor
     public Course(String topic, Teacher instructor) {
         this.topic = topic;
         this.instructor = instructor;
