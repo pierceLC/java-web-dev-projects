@@ -6,11 +6,10 @@ public class MenuItem {
     private String category;
     private boolean isNew;
 
-    public MenuItem(double p, String d, String c, boolean iN) {
+    public MenuItem(double p, String d, String c) {
         this.price = p;
         this.description = d;
         this.category = c;
-        this.isNew = iN;
     }
 
     public void setPrice(double price) {
@@ -28,5 +27,31 @@ public class MenuItem {
     public void setNew(boolean aNew) {
         isNew = aNew;
     }
+
+    public boolean isNew() {
+        return isNew;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return Double.compare(menuItem.price, price) == 0 &&
+                isNew == menuItem.isNew &&
+                description.equals(menuItem.description) &&
+                category.equals(menuItem.category);
+    }
+
+    @Override
+    public String toString() {
+        return "MenuItem{" +
+                "price=" + price +
+                ", description='" + description + '\'' +
+                ", category='" + category + '\'' +
+                ", isNew=" + isNew +
+                '}';
+    }
 }
+
 

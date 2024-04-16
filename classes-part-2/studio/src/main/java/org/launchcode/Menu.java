@@ -27,6 +27,35 @@ public class Menu {
     public ArrayList<MenuItem> getItems() {
         return items;
     }
+    public void addItem(MenuItem itemToAdd) {
+        if (items.contains(itemToAdd)) {
+            System.out.println("Warning: Item already exists on the menu!");
+        } else {
+            items.add(itemToAdd);
+            updateLastUpdated(new Date());
+        }
+    }
+
+        public void removeItem(MenuItem itemToRemove) {
+        items.remove(itemToRemove);
+        updateLastUpdated(new Date());
+    }
+
+
+    public void updateLastUpdated(Date newLastUpdated) {
+        setLastUpdated(newLastUpdated);
+    }
+
+    public void printMenuItem(MenuItem item) {
+        System.out.println(item);
+    }
+
+    public void printMenu() {
+        for (MenuItem item : items) {
+            printMenuItem(item);
+        }
+    }
+
 }
 
 
